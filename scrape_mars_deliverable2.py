@@ -10,25 +10,15 @@ from bs4 import BeautifulSoup as soup
 import pandas as pd
 import datetime as dt
 
-# scrape_all function 
 # - Initialize the browser
 # - Create a data dictionary
 # - End the Web driver and return the scraped data
+
 # Initialize browser
-def init_browser(): 
-    #Windows Users
-    # executable_path = {'executable_path': '/Users/cantu/Desktop/Mission-to-Mars'}
-    # return Browser('chrome', **executable_path, headless=False)
-    exec_path = {'executable_path': '/app/.chromedriver/bin/chromedriver'}
-    return Browser('chrome', headless=True, **exec_path)
-
-
-
 def scrape_all():
 
-    # Initiate headless driver for deployment
-    executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
-    browser = Browser('chrome', **executable_path, headless=True)
+    executable_path = {'executable_path': '/WebDrivers/chromedriver'}
+    return Browser('chrome', headless=True, **executable_path)
 
     news_title, news_paragraph = mars_news(browser)
 
